@@ -1,0 +1,849 @@
+/*Defining custom fonts*/
+@font-face {
+    font-family: Playfair-Display;
+    src: url(../fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Cardo;
+    src: url(../fonts/Cardo-Bold.ttf);
+}
+
+@font-face {
+    font-family: Alegreya-Sans;
+    src: url(../fonts/AlegreyaSans-Regular.ttf);
+}
+
+/**********************************************************/
+/*Defining the overall style of the website*/
+body {
+    margin: 0 auto; /*Centering the body with no margins on the top*/
+    width: 100%; /*full-width page*/
+    box-sizing: border-box;
+}
+
+/*Defining the properties of the header*/
+header {
+    /*Adding padding on the top to accommodate the fixed navigation*/
+    padding-top: 10vh; 
+}
+
+/*Font Styling*/
+/*Defining the properties of headings*/
+h1, h2, h3 {
+    font-family: Cardo, serif;
+    color:#1F1D1B;
+    text-transform: uppercase; /*Setting all headings as uppercase*/
+}
+
+/*Adjusting font sizes for headings accordingly*/
+h1 {
+    font-size: 3vh;
+}
+
+h2 {
+    font-size: 2vh;
+}
+
+h3 {
+    font-size: 1.5vh;
+}
+
+/*Defining the properties of paragraph text*/
+p {
+    font-family: Alegreya-Sans, sans-serif;
+    font-size: 2vh;
+    color:#1F1D1B;
+}
+
+/*Defining the properties of links*/
+a {
+    font-family: Cardo, serif;
+    font-size: 2vh;
+    color:#1F1D1B;
+    text-transform: uppercase;
+    text-decoration: none; /*Removing the default line under links*/
+    margin: 0 2vw; /*Removing the top and bottom margins*/
+}
+
+/*Defining the properties of the container for text*/
+.main-text {
+    text-align: center; /*Aligning text to center*/
+    width: 50%; /*Text only taking up 50% of the full width of the page*/
+    margin: 10vh auto; /*Centering the container*/
+}
+
+/*Fixing the overlaps in fixed navigation bar links with rest of page*/
+/*(Garner 2015)*/
+:target::before {
+    content: "";
+    display: block;
+    height: 5vh;
+}
+
+/**********************************************************/
+/*Navigation Styling*/
+nav {
+    margin: 0;
+    padding: 0;
+    display: flex; /*Making the container flexible*/
+    justify-content: space-between; /*Adding space between items*/
+    align-items: center; /*Aligning items horizontally centered*/
+    background-color: #FFFFFF;
+    position: fixed; /*Fix the nav bar on the top of the page*/
+    width: 100%; /*Full width navbar*/
+    /*Box shadow is applied to the bottom of the nav bar to distinguish it from the rest of the white page*/
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2); /*(W3 Schools n.d.)*/
+    
+}
+
+/*Defining the logo image on the top left in the navigation bar.*/
+#home-logo img {
+    width: 5vw;
+}
+
+/*Adding hover effects to the navigation bar links*/
+.right-nav a:hover {
+    border-bottom: 2px solid #CBCBCB;    
+}
+
+/*Defining the properties of the call to action button in nav bar*/
+#book-now-button {
+    margin: 2vh 1vw;
+    text-transform: uppercase;
+    background: #1D2F0E;
+    color: #FFFFFF;
+    padding: 1vh;
+    border-radius: 10px; /*Rounding the corners of the button*/
+}
+
+/*Adding hover effects on the call to action button in nav bar by inverting colours.*/
+#book-now-button:hover {
+    background: #FFFFFF;
+    color: #1D2F0E;
+    border: 2px solid #1D2F0E;
+}
+
+/**********************************************************/
+/*Creating parallax effect on images*/
+/* (W3 Schools 2019) */
+#background-1, #background-2, #background-3, #background-4 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Styling the parallax effect images that are not in the header*/
+#background-2, #background-3, #background-4 {
+    display: flex; /*Making items in container flexible*/
+    align-items: center; /*Aligning items horizontally centered*/
+    justify-content: center; /*Vertically centering items*/
+    background-color: #414141;
+    background-blend-mode:overlay; /*Adding a darkening overlay to the image to make the quote more visible*/
+    min-height: 40vh; /*Setting the minimum height for the images with quotes*/
+}
+
+/*Defining the url of the header image*/
+#background-1 {
+    /*(Anderson n.d.)*/
+    background-image: url("../images/34.jpg");
+    min-height: 90vh;
+}
+
+/*Defining the url of the quote images*/
+#background-2 {
+    /* (Francis 2022) */
+    background-image: url("../images/27.jpg");
+}
+
+#background-3 {
+    /* (Francis 2022) */
+    background-image: url("../images/26.jpg");
+}
+
+#background-4 {
+    /*(avanti_photo n.d.)*/
+    background-image: url("../images/38.jpg");  
+}
+
+.quote {
+    width: 70%; /*Defining the width of the quote in the parallax images*/
+}
+
+.quote p, .quote h3 {
+    color: #DDDDDD; /*Setting the colour of the font of the quote*/
+}
+
+.quote p {
+    font-family: Playfair-Display, serif;
+    font-size: 4vh;
+    text-transform: uppercase;
+}
+
+.quote h3{
+    float: right; /*Floating the author of the quote to the right of the container*/
+}
+
+/**********************************************************/
+/*Defining the properties of a gallery of three images in a row*/
+.three-gallery{
+    display: flex; /*Making the items in the container flexible*/
+    flex-wrap: wrap; /*Causing the items to wrap depends on screen size*/
+    justify-content:center; /*Aligning items to center*/
+    width: 80%; /*Adjusting the width of the container*/
+    margin: 0 auto; /*Aligning the container to center of the page*/
+}
+
+.three-gallery img {
+    flex-basis: 32%; /*Items to only take up around a third of the container*/
+    width: 300px; /*Defining width of the images*/
+    height: auto; /*The height will depend on the tallest item in the container*/
+    padding: 5px; /*Adding padding to create a framed effect*/
+}
+
+/**********************************************************/
+/*Defining the masonry grid gallery*/
+.grid-gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 4px;
+}
+  
+.grid-gallery-column {
+    flex: 30%; /*Each column to only take up roughly around 1/3 of the container*/
+    max-width: 30%;
+    padding: 0 4px;
+}
+  
+.grid-gallery-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/**********************************************************/
+/*Defining the properties of the testimonials section*/
+#testimonials {
+    margin-bottom: 10vh; /*Adding white space under the container*/
+}
+
+/*Defining the properties of the past clients testimonials container*/
+.single-testimonials {
+    width: 80%;
+    margin: 0 auto; /*Aligning the container in the middle of its allowed space*/
+    display: flex;
+    flex-direction: row; /*Allowing the testimonails to appear in a row*/
+    justify-content: space-around; /*Items are equally distributed according to the space*/
+    text-align: center;
+}
+
+/*Defining the properties of a single testimonial*/
+.single {
+    width: 30%; /*The width of each container will roughly take a third of the space*/
+    height: auto;
+    padding: 5px;
+}
+
+/*Defininig the properties of the past client's profile photo*/
+.single img {
+    border-radius: 50%; /*Making the image round provided the width and height of image is equal*/
+    width: 200px;
+}
+
+/**********************************************************/
+/*Defining the properties of the Book Now section*/
+#book-now {
+    margin-bottom: 10vh;/*Adding bottom margin to the book now section to create white space*/
+}
+
+#book-now h2 {
+    text-align: center;
+    width: 80%;
+    margin: 5vh auto;
+}
+
+.bedrooms{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.bedroom-info {
+    border: 1px solid #1F1D1B;
+    margin:auto;
+    border-radius: 5px;
+    flex-basis: 30%;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.bedroom-icons img {
+    width:50px;
+}
+
+.bedroom-info p {
+    font-size: 1.5vh;
+}
+
+/*Defining the properties of the list of amenities container*/
+#amenities {
+    width: 45%; 
+    margin: 0 auto;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+/*Each column displayed takes up half of the container*/
+#amenities ul {
+    width: 50%;
+}
+
+#amenities ul li {
+    font-family: Alegreya-Sans, sans-serif;
+    font-size: 2vh;
+}
+
+#amenities ul li img {
+    height: 25px; /*Height and width is equal for uniformity*/
+    width: 25px;
+    padding: 0 2vh;
+}
+
+/******************************************/
+/* Form Styling */
+#form-description-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /*To allow the form description to be beside the form*/
+}
+
+/*Defining the properties of the description appearing beside the form*/
+#form-description {
+    width: 100%;
+    padding: 0 2vw 2vh 2vw;
+}
+
+/*Styling  the texts relating to the form*/
+label, input, textarea, button {
+    font-family: Alegreya-Sans, sans-serif;
+    line-height: 1.2;
+}
+
+/*Defining the properties of the form area*/
+#form-wrapper {
+    width: 100%;
+}
+
+form div {
+  margin-top: 1vh; /*Adding top padding to each div*/
+}
+
+.inline-form {
+    display: flex;
+    flex-basis: 50%;
+}
+
+.inline-form-item {
+    width: 50%;
+    margin: 0 1vw;
+}
+
+.comment-form {
+    margin: 0 1vw;
+}
+
+input, textarea {
+    padding: 0.5vw;
+    width: 100%;
+    border: 1px solid;
+}
+
+textarea {
+    resize: none; /*Removing resizable text area for comments*/
+}
+
+/*Defining the properties of the 'Submit Enquiry' button*/
+button {
+    float: right;
+    margin: 2vh 0;
+    font-family: Cardo, serif;
+    text-transform: uppercase;
+    background: #1D2F0E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px; /*Rounding the button edges*/
+    padding: 1vh;
+    cursor: pointer; /*Cursor becomes a pointer on hover*/
+}
+
+/*Inverting the colours on hover*/
+button:hover{
+    background: #FFFFFF;
+    color: #1D2F0E;
+    border: 2px solid #1D2F0E;
+}
+
+/******************************************/
+/*Defining the properties of the Contact section*/
+#contact {
+    width: 80%;
+    margin: 10vh auto;
+}
+
+#contact-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#google-maps {
+    width: 500px; /*Adding a fixed width to the iframe*/
+    height: 400px; /*Adding a fixed height to the iframe*/
+    border: none; /*Removing the default iframe border*/
+}
+
+#contact-information {
+    margin: 0 5vw; /*Adding side margins to the contact info*/
+}
+
+#contact-information img {
+    width: 12vh; /*Defining the width of the logo*/
+}
+
+/**********************************************************/
+/*Footer Styling*/
+footer {
+    background-color: #CBCBCB;
+    position: relative; /*Position is relative to the rest of the page*/
+    bottom: 0; /*Stick to the bottom of the page*/
+}
+
+/*Defining the container for the items in footer*/
+.footer-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#acknowledgement {
+    width: 30%; /*To take up only 30% on the left side of the footer*/
+    margin: 2vh 0;
+    padding-right: 2vw;
+    border-right: 2px solid #FFFFFF;
+}
+
+#acknowledgement p {
+    font-size: 1.5vh;
+}
+
+#acknowledgement img {
+    width: 2vw;
+}
+
+#copyright-text {
+    width: 100%;
+    padding: 1vh 1vw;
+}
+
+#copyright-text p {
+    font-size: 1.5vh;
+}
+
+/**********************************************************/
+/*Responsive Design Breakpoints*/
+/*(MDN Web Docs n.d.)*/
+
+/*Desktop Breakpoint*/
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    #home-logo img {
+        width: 7vw; /*Resizing the home page logo to match the size of the viewport*/
+    }
+
+    /*Resizing the fonts to match the size of the viewport*/
+    a, h2, p, #amenities ul li {
+        font-size: 2.5vh;
+    }
+    
+    h1 {
+        font-size: 3.5vh;
+    }
+
+    .bedroom-info p, h3, #acknowledgement p, #copyright-text p {
+        font-size: 2vh;
+    }
+}
+
+/**********************************************/
+/*Tablet Breakpoint (Landscape)*/
+@media screen and (max-width: 1024px) {
+    :target::before {
+        height: 0; /*Removing the offset as the navigation bar no longer fixed*/
+    }
+
+    /**********************************************/
+    /*Responsive navigation styling*/
+    nav {
+        text-align: center;
+        display: block; /*Allowing logo and links to stack on top of each other*/
+        position: static; /*Unfix the navigation*/
+        box-shadow: none; /*Removing the shadow of the nav bar*/
+    }
+
+    #home-logo img {
+        width: 10vw;
+    }
+
+    /*Defining the properties of the previously right-hand side links*/
+    .right-nav {
+        width: 50%; /*Changing the container size to 50%*/
+        margin: 0 auto; /*Centering the links*/
+    }
+
+    .right-nav a{
+        display: block; /*Stacking the links on top of each other*/
+    }
+
+    .right-nav a:hover {
+        border: none; /*Removing hover effects as links are now tapped with finger*/
+    }
+
+    #book-now-button:hover {
+        border:none;
+        background-color: #1D2F0E;
+        color:#FFFFFF;
+    }
+
+    /**********************************************/
+    header {
+        padding-top: 0 /*Removing top padding*/
+    }
+
+    #background-1, #background-2, #background-3, #background-4 {
+        background-attachment: scroll; /*Turning off parallax for mobile*/
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .main-text {
+        width: 70%;
+    }
+
+    /**********************************************/
+    .three-gallery {
+        flex-direction: column; /*3 images in a row now 3 images in a column*/
+    }
+
+    .three-gallery img {
+        flex-basis:unset; /*Removing the contraints for width*/
+        width: 100%;
+    }
+
+    /**********************************************/
+    .grid-gallery-column {
+        flex: 80%;
+        max-width: 80%;
+    }
+
+    /**********************************************/
+    .bedrooms {
+        flex-direction: column; /*Bedroom info now stacks on each other*/
+        width: 70%; /*Only taking up 70% of the page*/
+    }
+
+    #amenities {
+        width: 60%;
+    }
+
+    #amenities ul {
+        margin: 0 auto;
+    }
+
+    /**********************************************/
+    #form-description-wrapper {
+        display: flex;
+        flex-direction: column; /*Form and description now on top of one another*/
+    }
+
+    button {
+        float: right; 
+        width: 50%; /*Making the button bigger on a smaller screen*/
+    }
+
+    #form-description {
+        border-top: 2px solid #CBCBCB; /*Adding a dividing line*/
+    }
+}
+
+/**********************************************/
+/*Tablet Breakpoint (Portrait)*/
+@media screen and (max-width: 768px) {
+    #background-1 {
+        min-height: 60vh; /*Making header image vertically longer*/
+    }
+
+    .main-text {
+        width: 80%; /*Increasing the container width of main texts*/
+    }
+
+    #home-logo img {
+        width: 20vw; /*Increasing the size of the logo in nav bar*/
+    }
+
+    /*Increasing font sizes for readability*/
+    a, h2, p, #amenities ul li {
+        font-size: 2.5vh;
+    }
+    
+    h1 {
+        font-size: 3.5vh;
+    }
+
+    .bedroom-info p, h3, #acknowledgement p, #copyright-text p {
+        font-size: 2vh;
+    }
+
+    /**********************************************/
+    .grid-gallery-column {
+        flex: 90%; /*Previously masonry grid now takes up 90% of viewport width in a column*/
+        max-width: 90%;
+    }
+
+    /**********************************************/
+    .single-testimonials {
+        flex-direction: column; /*Testimonials now in a column*/
+    }
+
+    .single {
+        width: 100%; /*Increasing the width of each testimonial*/
+    }
+
+    /**********************************************/
+    .bedrooms {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    #amenities {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    /**********************************************/
+    #form-description {
+        padding: 0; /*Removing padding from form*/
+    }
+
+    label, input, textarea, button {
+        font-family: Alegreya-Sans, sans-serif;
+        font-size: 2.5vh;
+        line-height: 2;
+    }
+
+    #form-description-wrapper {
+        flex-direction: column; /*Form description now at the bottom of the form*/
+    }
+
+    form div {
+        margin-top: 0; /*Removing padding from top of divs*/
+    }
+
+    .inline-form {
+        flex-direction: column; /*Each label and input appears in a column*/
+        flex-basis: unset;
+    }
+
+    .inline-form-item {
+        width: 100%;
+        margin: 0;
+    }
+
+    .comment-form {
+        width: 100%;
+        margin: 0;
+    }
+
+    input, textarea {
+        padding: 0;
+    }
+
+    button {
+        float: none;
+        width: 100%; /*Submit Enquiry button now spans the width of the viewport for better user experience*/
+    }
+
+    /**********************************************/
+    #contact-content {
+        flex-direction: column;
+    }
+
+    #google-maps {
+        width: 100%;
+        padding-bottom: 2vh;
+    }
+
+    #contact-information {
+        padding-top: 2vh;
+        margin: 0;
+        border-top: 2px solid #CBCBCB;
+        width: 100%;
+        text-align: center;
+    }
+
+    /**********************************************/
+    .footer-content {
+        flex-direction: column;
+    }
+
+    #acknowledgement {
+        width: 100%;
+        padding-bottom: 2vh;
+        border-right: none;
+        border-bottom: 2px solid #FFFFFF;
+    }
+
+    #copyright-text {
+        padding: 0;
+    }
+
+    #acknowledgement img {
+        width: 10vw;
+    }
+
+}
+
+/**********************************************/
+/*Mobile Breakpoint (Accommodates most landscape modes)*/
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    /*Increasing sizes of fonts to accommodate shorter height*/
+    a, h2, p, #amenities ul li {
+        font-size: 4vh;
+    }
+    
+    #background-1 {
+        min-height: 80vh;
+    }
+
+    h1 {
+        font-size: 6vh;
+    }
+
+    a, h2, p, #amenities ul li {
+        font-size: 4vh;
+    }
+
+    .bedroom-info p, h3, #acknowledgement p, #copyright-text p {
+        font-size: 3vh;
+    }
+
+    .main-text {
+        width: 90%;
+    }
+
+    /**********************************************/
+    .grid-gallery-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    /**********************************************/
+    .bedrooms {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #amenities ul {
+        width: 80%;
+    }
+
+    /**********************************************/
+    #form-description-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    label, input, textarea {
+        font-size: 5vh;
+    }
+
+    form button {
+        font-size: 5vh;
+    }
+}
+
+/**********************************************/
+/*Mobile breakpoint (Portrait mode)*/
+@media screen and (max-width: 360px) {
+    #home-logo img {
+        width: 30vw;
+    }
+
+    a, h2, p, #amenities ul li {
+        font-size: 3vh;
+    }
+    
+    h1 {
+        font-size: 4vh;
+    }
+
+    .bedroom-info p, h3, #acknowledgement p, #copyright-text p {
+        font-size: 2.5vh;
+    }
+
+    .main-text {
+        width: 90%;
+    }
+
+    /**********************************************/
+    .grid-gallery-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    /**********************************************/
+    .bedrooms {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #amenities ul {
+        width: 80%;
+    }
+
+    /**********************************************/
+    #form-description-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label, input, textarea {
+        font-size: 3vh;
+    }
+
+    form button {
+        font-size: 3vh;
+    }
+}
+
+/* References 
+
+Anderson, Gieves. n.d. Berkshires Black Barn. JAM Architectures. Accessed November 19, 2022. https://www.jambk.com/158b.
+
+avanti_photo. n.d. Tuscany View with Cypress Trees. Envato Elements. Accessed November 19, 2022. https://elements.envato.com/tuscany-view-with-cypress-trees-CHGSQWB.
+
+Francis, Lucy. 2022. “The Barn at Rangeview: NSW Country Accommodation.” Homes to Love. March 4, 2022. https://www.homestolove.com.au/the-barn-at-rangeview-country-accommodation-23464.
+
+Garner, Adrian. 2015. “Html - Fixed Page Header Overlaps In-Page Anchors.” Stack Overflow. March 3, 2015. https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors.
+
+MDN Web Docs. n.d. “Using Media Queries.” MDN Web Docs. Accessed November 20, 2022. https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries.
+
+———. n.d. “CSS Box Shadow.” Www.w3schools.com. Accessed November 19, 2022. https://www.w3schools.com/css/css3_shadows_box.asp.
+
+W3 Schools. 2019. “How to Create a Parallax Scrolling Effect.” W3schools.com. 2019. https://www.w3schools.com/howto/howto_css_parallax.asp. */
